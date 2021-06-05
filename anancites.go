@@ -20,7 +20,6 @@ func main() {
 			w.WriteHeader(500)
 			fmt.Fprintln(w, err)
 		} else {
-			w.Header().Add("Access-Control-Allow-Origin", "https://*.chrissx.de")
 			w.WriteHeader(res.StatusCode)
 			io.Copy(w, res.Body)
 		}
